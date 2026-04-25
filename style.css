@@ -1,0 +1,734 @@
+
+/* Reset dan base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('school-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+/* Header dan Navbar */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.75rem 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-shrink: 0;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+    display: block;
+}
+
+.nav-menu {
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover {
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 65px;
+        flex-direction: column;
+        background-color: #2c3e50;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        margin: 0.5rem 0;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        gap: 0.5rem;
+    }
+}/* Tombol WhatsApp mengambang */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 28px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('bagroudteks.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+.hero h2,
+.hero p {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+    backdrop-filter: none;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    border: none;
+    color: #ffffff;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+
+}
+
+/* Card Container dan Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+    min-height: 150px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+        margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 30px 10px;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    section p {
+        font-size: 0.85rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1rem;
+    }
+}   
+/* .Container WA */
+.wa-container {
+      position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+/* Text bubble */
+.wa-text {
+    position: absolute;
+    right: 70px; /* ⬅️ ini kunci utama */
+    bottom: 10px;
+
+    background: white;
+    color: #333;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+    white-space: nowrap;
+}
+/* Tombol bulat */
+.whatsapp-float {
+    background-color: #25D366;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+/* Panah kecil */
+.wa-text::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+/* Hover efek tombol WA */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* Animasi bubble */
+.wa-text {
+    animation: fadeOut 5s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+/* Section Profil */
+#profil {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Background gelap transparan */
+#profil::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+/* Konten di atas overlay */
+#profil .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Judul */
+#profil h2, 
+#profil h3 {
+    margin-bottom: 10px;
+}
+
+/* Paragraf */
+#profil p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* List */
+#profil ul {
+    list-style: none;
+    padding: 0;
+}
+
+#profil li {
+    margin-bottom: 8px;
+}
+#profil h2 {
+    font-size: 28px;
+}
+
+#profil h3 {
+    color: #00ffcc;
+}
+/* Card profil */
+#profil .content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Judul utama */
+#profil h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Sub judul */
+#profil h3 {
+    color: #00ffcc;
+    margin-top: 20px;
+}
+
+/* Paragraf */
+#profil p {
+    line-height: 1.7;
+}
+
+/* List misi */
+#profil li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Bullet custom */
+#profil li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #00ffcc;
+}
+#profil .content {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Overlay gelap */
+#profil::before {
+ content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2)
+    );
+    z-index: 1;
+}
+
+/* Card tengah */
+#profil .content {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Judul */
+#profil h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Sub judul */
+#profil h3 {
+    color: #f5faf9;
+    margin-top: 20px;
+}
+
+/* Paragraf */
+#profil p {
+    color: #eee;
+    line-height: 1.7;
+}
+
+/* List */
+#profil li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Bullet custom */
+#profil li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #edf1f1;
+}
+/* ===== PERBAIKAN TEKS PROFIL ===== */
+
+#profil {
+    color: #ffffff;
+}
+
+#profil h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #09e21b;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+#profil p {
+    color: #f1f1f1;
+    line-height: 1.8;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+#profil h3 {
+    color: #e1ecea;
+    font-weight: 600;
+    margin-top: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+#profil li {
+    color: #eaeaea;
+    margin: 8px 0;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+.card {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    min-height: 80px;
+    backdrop-filter: blur(10px);
+    text-decoration: none; /* 🔥 penting biar gak ada garis link */
+
+}
+/* Nama guru */
+.card p {
+    margin: 0;
+    font-size: 16px;
+    color: #222;
+}
+
+/* teks info (disembunyikan awal) */
+.card .info {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #00ffcc;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+/* hover PC */
+.card:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* klik HP */
+.card:active .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;  
+}
+.card:hover {
+    transform: translateY(-10px);
+    background: #2c3e50;
+    color: white;
+} /* 🔥 WAJIB ADA INI */
+
+#guru {
+    padding: 60px 20px;
+}
+
+.card .info {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #00ffcc;
+
+    opacity: 0; /* 🔥 WAJIB 0 */
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+    .card:hover .info {
+    opacity: 1;
+    transform: translateY(0)
+}
+    .card:active .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+#map {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.map-container {
+    max-width: 900px;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
