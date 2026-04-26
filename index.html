@@ -150,3 +150,24 @@
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
     </a>
 </div>
+<!-- 🔥 SCRIPT WAJIB (INI YANG BIKIN HAMBURGER JALAN) -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+// auto close kalau klik menu
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
